@@ -13,9 +13,10 @@ class OpenAIServicesImplTest {
     @Test
     void getAnswer() {
 
-        String question = "What is JAVA?";
+        String question = "Give me 10 sentences that end with the word apple";
         String answer = openAIService.getAnswer(question);
         System.out.println(question);
+        System.out.println();
         System.out.println("Got the answer:");
         System.out.println();
         System.out.println(answer);
