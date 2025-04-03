@@ -46,6 +46,16 @@ public class OpenAIServicesImpl implements OpenAIService {
         Prompt prompt = promptTemplate.create(Map.of("stateOrCountry", getCapitalRequest.stateOrCountry(),
                 "format", format));
 
+        System.out.println(chatModel.getDefaultOptions().getModel());
+        System.out.println(chatModel.getDefaultOptions().getTemperature());
+        System.out.println(chatModel.getDefaultOptions().getMaxTokens());
+        System.out.println(chatModel.getDefaultOptions().getFrequencyPenalty());
+        System.out.println(chatModel.getDefaultOptions().getPresencePenalty());
+        System.out.println(chatModel.getDefaultOptions().getStopSequences());
+        System.out.println(chatModel.getDefaultOptions().getFrequencyPenalty());
+        System.out.println(chatModel.getDefaultOptions().getTopK());
+        System.out.println(chatModel.getDefaultOptions().getTopP());
+
         ChatResponse response = chatModel.call(prompt);
         System.out.println("Response\n" + response.getResult().getOutput().getText());
         return converter.convert(response.getResult().getOutput().getText());
